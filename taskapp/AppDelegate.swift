@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import UserNotifications    // 追加
+import UserNotifications    // 追加7.2
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate  {
     
     
     
@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             // Enable or disable features based on authorization
-        } // --- ここまで追加 ---
+        } // --- ここまで追加 ---7.2
         center.delegate = self     // 追加
         
         return true

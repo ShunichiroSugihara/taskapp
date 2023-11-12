@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import RealmSwift    // 追加する
-import UserNotifications    // 追加
+import RealmSwift    // 追加する　viewWillDisappearメソッド
+import UserNotifications    // 追加7.3
 
 
 class InputViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var contentsTextView: UITextView!
-    @IBOutlet weak var taitleTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     
     let realm = try! Realm()    // 追加する
     var task: Task!   // 追加する
@@ -49,7 +49,7 @@ class InputViewController: UIViewController {
     // タスクのローカル通知を登録する --- ここから ---
         func setNotification(task: Task) {
             let content = UNMutableNotificationContent()
-            // タイトルと内容を設定(中身がない場合メッセージ無しで音だけの通知になるので「(xxなし)」を表示する)
+            //タイトルと内容を設定(中身がない場合メッセージ無しで音だけの通知になるので「(xxなし)」を表示する)
             if task.title == "" {
                 content.title = "(タイトルなし)"
             } else {
@@ -67,7 +67,7 @@ class InputViewController: UIViewController {
             let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: task.date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
 
-            // identifier, content, triggerからローカル通知を作成（identifierが同じだとローカル通知を上書き保存）
+            //identifier,content,triggerからローカル通知を作成（identifierが同じだとローカル通知を上書き保存）
             let request = UNNotificationRequest(identifier: String(task.id.stringValue), content: content, trigger: trigger)
 
             // ローカル通知を登録

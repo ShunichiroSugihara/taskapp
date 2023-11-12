@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="XcA-CN-dOM" detailTextLabel="k86-xZ-57l" style="IBUITableViewCellStyleSubtitle" id="oPk-oR-3qZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="XcA-CN-dOM" detailTextLabel="k86-xZ-57l" style="IBUITableViewCellStyleSubtitle" id="oPk-oR-3qZ">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oPk-oR-3qZ" id="fEU-Qb-HmY">
@@ -94,6 +94,7 @@
         <!--Input View Controller-->
         <scene sceneID="VGs-7g-Hix">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYZ-2O-abG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Iyc-aa-DwW" customClass="InputViewController" customModule="taskapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ayg-Kt-avV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -158,16 +159,15 @@
                     <connections>
                         <outlet property="contentsTextView" destination="Qq7-cd-yEP" id="HsH-uH-dP3"/>
                         <outlet property="datePicker" destination="NyL-sg-1bE" id="GmX-3u-5U3"/>
-                        <outlet property="taitleTextField" destination="XE0-dU-rJx" id="BQM-yD-VLi"/>
+                        <outlet property="titleTextField" destination="XE0-dU-rJx" id="Adi-de-TJ8"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pYZ-2O-abG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1788.5496183206105" y="226.7605633802817"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NUi-yc-iyN"/>
+        <segue reference="jva-NT-4B9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

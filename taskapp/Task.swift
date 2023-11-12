@@ -13,7 +13,10 @@ class Task: Object {
 
     // タイトル
     @Persisted var title = ""
-
+    
+   //カテゴリー　課題
+    @Persisted var category = ""
+    
     // 内容
     @Persisted var contents = ""
 
