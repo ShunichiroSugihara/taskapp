@@ -11,6 +11,9 @@ import UserNotifications    // 追加7.3
 
 
 class InputViewController: UIViewController {
+    
+    @IBOutlet weak var categoryTextField: UITextField!  //杉原
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -29,6 +32,8 @@ class InputViewController: UIViewController {
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
+        
+        categoryTextField.text = task.category   //杉原
     }
 
  
@@ -39,6 +44,8 @@ class InputViewController: UIViewController {
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
             self.realm.add(self.task, update: .modified)
+            
+            self.task.category = self.categoryTextField.text!  //杉原
         }
         
         setNotification(task: task)   // 追加

@@ -112,13 +112,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmA-1L-meP">
-                                <rect key="frame" x="10" y="188" width="373" height="21"/>
+                                <rect key="frame" x="10" y="291" width="373" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qq7-cd-yEP">
-                                <rect key="frame" x="10" y="219" width="373" height="120"/>
+                                <rect key="frame" x="10" y="322" width="373" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="9xH-rv-Byq"/>
@@ -129,34 +129,51 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="NyL-sg-1bE">
-                                <rect key="frame" x="0.0" y="349" width="393" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="9hb-gi-ftQ"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="460" width="393" height="216"/>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9I-km-vIN">
+                                <rect key="frame" x="10" y="202" width="373" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r5b-QO-T5i">
+                                <rect key="frame" x="10" y="233" width="373" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TkA-z9-yW4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NyL-sg-1bE" firstAttribute="top" secondItem="Qq7-cd-yEP" secondAttribute="bottom" constant="10" id="0UL-51-RQn"/>
+                            <constraint firstItem="NyL-sg-1bE" firstAttribute="leading" secondItem="TkA-z9-yW4" secondAttribute="leading" id="0uZ-zD-ZBi"/>
                             <constraint firstItem="TkA-z9-yW4" firstAttribute="trailing" secondItem="od4-Gk-aMY" secondAttribute="trailing" constant="10" id="1cK-Uo-fgq"/>
                             <constraint firstItem="Qq7-cd-yEP" firstAttribute="leading" secondItem="TkA-z9-yW4" secondAttribute="leading" constant="10" id="1pe-QV-23i"/>
+                            <constraint firstItem="l9I-km-vIN" firstAttribute="top" secondItem="XE0-dU-rJx" secondAttribute="bottom" constant="24" id="4i8-ER-PoA"/>
                             <constraint firstItem="od4-Gk-aMY" firstAttribute="top" secondItem="TkA-z9-yW4" secondAttribute="top" constant="10" id="7jQ-52-jAC"/>
                             <constraint firstItem="TkA-z9-yW4" firstAttribute="trailing" secondItem="MmA-1L-meP" secondAttribute="trailing" constant="10" id="BXZ-Q8-1tu"/>
                             <constraint firstItem="XE0-dU-rJx" firstAttribute="leading" secondItem="TkA-z9-yW4" secondAttribute="leading" constant="10" id="GAf-PJ-q2A"/>
+                            <constraint firstItem="l9I-km-vIN" firstAttribute="leading" secondItem="TkA-z9-yW4" secondAttribute="leading" constant="10" id="JXs-SW-Chq"/>
+                            <constraint firstItem="r5b-QO-T5i" firstAttribute="leading" secondItem="TkA-z9-yW4" secondAttribute="leading" constant="10" id="KBJ-IA-B3A"/>
+                            <constraint firstItem="TkA-z9-yW4" firstAttribute="trailing" secondItem="r5b-QO-T5i" secondAttribute="trailing" constant="10" id="NA9-04-bVW"/>
                             <constraint firstItem="TkA-z9-yW4" firstAttribute="trailing" secondItem="NyL-sg-1bE" secondAttribute="trailing" id="Y02-7D-Cmh"/>
                             <constraint firstItem="XE0-dU-rJx" firstAttribute="top" secondItem="od4-Gk-aMY" secondAttribute="bottom" constant="10" id="Ydl-Mn-TB4"/>
                             <constraint firstItem="od4-Gk-aMY" firstAttribute="leading" secondItem="TkA-z9-yW4" secondAttribute="leading" constant="10" id="clQ-eZ-mQE"/>
+                            <constraint firstItem="r5b-QO-T5i" firstAttribute="top" secondItem="l9I-km-vIN" secondAttribute="bottom" constant="10" id="eYP-tl-CLn"/>
                             <constraint firstItem="NyL-sg-1bE" firstAttribute="leading" secondItem="TkA-z9-yW4" secondAttribute="leading" id="kED-yG-NG6"/>
-                            <constraint firstItem="MmA-1L-meP" firstAttribute="top" secondItem="XE0-dU-rJx" secondAttribute="bottom" constant="10" id="mL3-8F-l0Z"/>
+                            <constraint firstItem="NyL-sg-1bE" firstAttribute="top" secondItem="Qq7-cd-yEP" secondAttribute="bottom" constant="18" id="nPL-BS-dka"/>
                             <constraint firstItem="Qq7-cd-yEP" firstAttribute="top" secondItem="MmA-1L-meP" secondAttribute="bottom" constant="10" id="sAk-3N-zTn"/>
+                            <constraint firstItem="NyL-sg-1bE" firstAttribute="trailing" secondItem="TkA-z9-yW4" secondAttribute="trailing" id="tZQ-AZ-dpe"/>
                             <constraint firstItem="MmA-1L-meP" firstAttribute="leading" secondItem="TkA-z9-yW4" secondAttribute="leading" constant="10" id="ufc-3y-5nB"/>
+                            <constraint firstItem="MmA-1L-meP" firstAttribute="top" secondItem="r5b-QO-T5i" secondAttribute="bottom" constant="24" id="wja-6o-rdZ"/>
+                            <constraint firstItem="TkA-z9-yW4" firstAttribute="trailing" secondItem="l9I-km-vIN" secondAttribute="trailing" constant="10" id="xDK-Tf-Xek"/>
                             <constraint firstItem="TkA-z9-yW4" firstAttribute="trailing" secondItem="XE0-dU-rJx" secondAttribute="trailing" constant="10" id="xYe-5r-DNd"/>
                             <constraint firstItem="TkA-z9-yW4" firstAttribute="trailing" secondItem="Qq7-cd-yEP" secondAttribute="trailing" constant="10" id="z0E-RH-3Sw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5qJ-6v-Sdq"/>
                     <connections>
+                        <outlet property="categoryTextField" destination="r5b-QO-T5i" id="bT1-xY-c0H"/>
                         <outlet property="contentsTextView" destination="Qq7-cd-yEP" id="HsH-uH-dP3"/>
                         <outlet property="datePicker" destination="NyL-sg-1bE" id="GmX-3u-5U3"/>
                         <outlet property="titleTextField" destination="XE0-dU-rJx" id="Adi-de-TJ8"/>
