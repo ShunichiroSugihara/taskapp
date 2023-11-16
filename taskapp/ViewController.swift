@@ -39,8 +39,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         // Cellに値を設定する  --- ここから ---
+        
         let task = taskArray[indexPath.row]
-        cell.textLabel?.text = task.title
+       
+        let taskString = "\(task.title)   [\(task.category)]"
+        cell.textLabel?.text = taskString
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
