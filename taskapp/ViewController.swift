@@ -9,7 +9,10 @@ import UIKit
 import RealmSwift   // ←追加　6.6
 import UserNotifications    // 追加 7.4
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
+    @IBOutlet weak var categorySearch: UISearchBar!
+    
     @IBOutlet weak var tableView: UITableView!
     
     // Realmインスタンスを取得する
@@ -20,12 +23,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)  // ←追加6.6ここまで
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.fillerRowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //デリゲート先を自分に設定する。
+        categorySearch.delegate = self
+        
+        
+        
+        
     }
     
     // データの数（＝セルの数）を返すメソッド
@@ -41,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Cellに値を設定する  --- ここから ---
         
         let task = taskArray[indexPath.row]
-       
+        
         let taskString = "\(task.title)   [\(task.category)]"
         cell.textLabel?.text = taskString
         
@@ -52,7 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.detailTextLabel?.text = dateString
         // --- ここまで追加 ---
         
-
+        
         
         
         return cell
@@ -98,6 +110,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
+    
     // segue で画面遷移する時に呼ばれる
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let inputViewController:InputViewController = segue.destination as! InputViewController
@@ -114,6 +127,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-
+    
+    
+    //検索ボタン押下時の呼び出しメソッド
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("searchBarSearchButtonClickedが呼ばれた")
+        
+        if categorySearch.text?.count == 0 {
+            taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+        }else{
+            taskArray = try! Realm().objects(Task.self).where { $0.category == "\(categorySearch.text!)" }.sorted(byKeyPath: "date", ascending: true)
+            
+        }
+        
+        tableView.reloadData()
+        
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if categorySearch.text?.count == 0 {
+            taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
+            tableView.reloadData()
+            
+        }
+        
+    }
 }
-
+        
+  

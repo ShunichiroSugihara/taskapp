@@ -19,8 +19,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qin-Ji-kd2">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="cpo-Ba-XW6">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" placeholder="カテゴリー検索" id="cpo-Ba-XW6">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -29,7 +29,7 @@
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="XcA-CN-dOM" detailTextLabel="k86-xZ-57l" style="IBUITableViewCellStyleSubtitle" id="oPk-oR-3qZ">
-                                        <rect key="frame" x="0.0" y="94" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="106" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oPk-oR-3qZ" id="fEU-Qb-HmY">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -72,6 +72,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categorySearch" destination="cpo-Ba-XW6" id="tPQ-KW-rHu"/>
                         <outlet property="tableView" destination="Qin-Ji-kd2" id="pw9-yx-IgM"/>
                         <segue destination="Iyc-aa-DwW" kind="show" identifier="cellSegue" id="NUi-yc-iyN"/>
                     </connections>
